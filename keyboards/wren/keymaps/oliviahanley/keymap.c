@@ -1,4 +1,4 @@
-/* Copyright 2021 Walter Hanley
+/* Copyright 2023 Olivia Hanley
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,11 +29,14 @@ uint16_t alt_tab_timer = 0;
 #define DELSYM LT(_SYMBOL, KC_DEL)
 #define SCLNAV LT(_NAV, KC_SCLN)
 #define TGNLCK TG(_NLCK)
+#define WINLCK LGUI(KC_L)
+#define MIRROR LGUI(KC_BRID)
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {
     _MAC,
     _WIN,
+    _GME,
     _NLCK,
     _SYMBOL,
     _NAV
@@ -50,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_PSLS, KC_7,    KC_8,    KC_9,    KC_EQL,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,  KC_INS,  KC_HOME, KC_PGUP, KC_NO,
      KC_PAST, KC_4,    KC_5,    KC_6,    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, KC_DEL,  KC_END,  KC_PGDN, KC_NO,
      KC_PMNS, KC_1,    KC_2,    KC_3,    ECTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    SCLNAV,  KC_QUOT, KC_NO,   KC_UP,   KC_NO,   KC_NO,
-     KC_PPLS, KC_0,    KC_DOT,  KC_ENT,  SC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SC_RSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
+     KC_PPLS, KC_0,    KC_DOT,  KC_ENT,  KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
                                                            TGNLCK,  KC_LALT, KC_LGUI, KC_BSPC, KC_ENT,  KC_SPC,  DELSYM,  KC_RGUI, KC_RALT, KC_MUTE
     ),
 
@@ -58,9 +61,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_WIN] = LAYOUT(
      KC_PSLS, KC_7,    KC_8,    KC_9,    KC_EQL,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,  KC_INS,  KC_HOME, KC_PGUP, KC_NO,
      KC_PAST, KC_4,    KC_5,    KC_6,    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, KC_DEL,  KC_END,  KC_PGDN, KC_NO,
-     KC_PMNS, KC_1,    KC_2,    KC_3,    EGUI,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    SCLNAV,  KC_QUOT, KC_NO,   KC_UP,   KC_NO,   KC_NO,
-     KC_PPLS, KC_0,    KC_DOT,  KC_ENT,  SC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SC_RSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
+     KC_PMNS, KC_1,    KC_2,    KC_3,    ECTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    SCLNAV,  KC_QUOT, KC_NO,   KC_UP,   KC_NO,   KC_NO,
+     KC_PPLS, KC_0,    KC_DOT,  KC_ENT,  KC_LSPO, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
                                                            TGNLCK,  KC_LALT, KC_LCTL, KC_BSPC, KC_ENT,  KC_SPC,  DELSYM,  KC_RCTL, KC_RALT, KC_MUTE
+    ),
+
+    /* Game */
+    [_GME] = LAYOUT(
+     KC_PSLS, KC_7,    KC_8,    KC_9,    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_EQL,  KC_INS,  KC_HOME, KC_PGUP, KC_NO,
+     KC_PAST, KC_4,    KC_5,    KC_6,    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, KC_DEL,  KC_END,  KC_PGDN, KC_NO,
+     KC_PMNS, KC_1,    KC_2,    KC_3,    KC_ESC,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    SCLNAV,  KC_QUOT, KC_NO,   KC_UP,   KC_NO,   KC_NO,
+     KC_PPLS, KC_0,    KC_DOT,  KC_ENT,  KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,
+                                                           KC_LGUI, KC_LALT, KC_LCTL, KC_BSPC, KC_SPC,  KC_ENT,  DELSYM,  KC_RCTL, KC_RALT, KC_MUTE
     ),
 
     /* In-Keyboard Numlock */
@@ -83,11 +95,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Nav Cluster and Settings*/
     [_NAV] = LAYOUT(
-     DF(_MAC), _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+     DF(_MAC), MIRROR,  _______, _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
      DF(_WIN), _______, _______, _______, _______, KC_PGUP, KC_HOME, KC_UP,   KC_END,  _______,                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-     _______,  _______, _______, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______,                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-     _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-                                                            _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+     DF(_GME), _______, _______, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, _______,                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+     WINLCK,   _______, _______, _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+                                                            EE_CLR,  _______, _______, _______, _______, _______, _______, _______, _______, _______
     )
 };
 
