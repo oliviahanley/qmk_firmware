@@ -1,13 +1,13 @@
 # Wren
 
-![Wren PCB](https://raw.githubusercontent.com/walterhanley/wren-keyboard/main/images/wren-universal.png)
-![Wren Layout](https://raw.githubusercontent.com/walterhanley/wren-keyboard/main/images/author-layout.png)
+![Wren PCB](https://raw.githubusercontent.com/oliviahanley/wren-keyboard/main/images/wren-universal.png)
+![Wren Layout](https://raw.githubusercontent.com/oliviahanley/wren-keyboard/main/images/author-layout.png)
 
-A split ergonomic "system keyboard" aimed at providing numpad and nav cluster functionality. For more information, please see the [project repo](https://github.com/walterhanley/wren-keyboard).
+A split ergonomic "system keyboard" aimed at providing numpad and nav cluster functionality. For more information, please see the [project repo](https://github.com/oliviahanley/wren-keyboard).
 
-* Keyboard Maintainer: [Walter Hanley](https://github.com/walterhanley)
+* Keyboard Maintainer: [Olivia Hanley](https://github.com/oliviahanley)
 * Hardware Supported: Wren Universal PCB and Elite C (Pro Micro configurations likely supported but not tested)
-* Hardware Availability: Source files available at [project repository](https://github.com/walterhanley/wren-keyboard)
+* Hardware Availability: Source files available at [project repository](https://github.com/oliviahanley/wren-keyboard)
 
 Make example for this keyboard (after setting up your build environment):
 

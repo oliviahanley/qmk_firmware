@@ -1,4 +1,4 @@
-/* Copyright 2023 Olivia Hanley
+/* Copyright 2024 Olivia Hanley
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ uint16_t alt_tab_timer = 0;
 #define SCLNAV LT(_NAV, KC_SCLN)
 #define TGNLCK TG(_NLCK)
 #define WINLCK LGUI(KC_L)
-#define MIRROR LGUI(KC_BRID)
+#define  LGUI(KC_BRID)
 
 // Defines names for use in layer keycodes and the keymap
 enum layer_names {

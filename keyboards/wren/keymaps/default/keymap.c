@@ -1,4 +1,4 @@
-/* Copyright 2021 Walter Hanley
+/* Copyright 2024 Olivia Hanley
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

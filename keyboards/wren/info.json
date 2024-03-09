@@ -1,7 +1,7 @@
 {
     "keyboard_name": "wren",
-    "manufacturer": "Walter Hanley",
-    "maintainer": "walterhanley",
+    "manufacturer": "Olivia Hanley",
+    "maintainer": "oliviahanley",
     "usb": {
         "vid": "0xFEED",
         "pid": "0x0000",

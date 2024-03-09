@@ -1,4 +1,4 @@
-![Author's Layout](https://github.com/walterhanley/wren-keyboard/blob/main/images/author-layout.png?raw=true)
+![Author's Layout](https://github.com/oliviahanley/wren-keyboard/blob/main/images/author-layout.png?raw=true)
 
 # Author's Wren Layout
 
